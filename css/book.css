@@ -1,0 +1,345 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.graphic-header, .graphic-footer {
+    background-color: #48bb87;
+    color: white;
+}
+
+.graphic-header {
+    padding: 0 !important;
+}
+
+.graphic-footer {
+    padding: 2% 0 !important;
+}
+
+.graphic-subheader {
+    padding: 0 0 20px 0 !important;
+    color: gray;
+}
+
+.graphic-header h1 {
+    text-transform: uppercase;
+    font-size: 42px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 100px; 
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 0.1em 0.8em;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+    font-family: "Indie Flower", serif;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.btn:hover {
+    color: #16a085;
+}
+
+/* basic grid, only for this demo */
+
+.align {
+    clear: both;
+    margin: 0px auto 20px;
+    width: 100%;
+    max-width: 1170px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.align > li {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: top;
+    padding: 5% 0;
+}
+
+.align > li:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+/* ///////////////////////////////////////////////////
+
+PAPERBACK
+Table of Contents
+
+1. container
+2. background & color
+3. opening cover, back cover and pages
+4. position, transform y transition
+5. events
+6. Bonus
+    - Ribbon
+    - Figcaption
+7. mini-reset
+
+/////////////////////////////////////////////////////*/
+
+/*
+    1. container
+*/
+
+.component {
+    max-width: 760px;
+    margin: 0 auto;
+    border: 2px solid lightgray;
+    margin-top: 30px;
+}
+.book {
+    position: relative;
+    width: 160px; 
+    height: 220px;
+    margin-left: 20px;
+    -webkit-perspective: 1500px;
+    -moz-perspective: 1500px;
+    perspective: 1500px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/*
+    2. background & color
+*/
+
+/* HARDCOVER FRONT */
+
+.paperback_front {
+    background-color: #000;
+}
+
+.paperback_front::after{
+    background-image: -webkit-linear-gradient( -135deg, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+    background-image: -moz-linear-gradient( -135deg, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+    background-image: linear-gradient( -135deg, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.paperback_back {
+    background-color: #333;
+}
+
+/* page */
+
+.ruled_paper > li {
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(rgba(200, 200, 200, 0.1) 0.1em, transparent 0.1em), -webkit-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+    background-image: -moz-linear-gradient(rgba(200, 200, 200, 0.1) 0.1em, transparent 0.1em), -moz-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+    background-image: -ms-linear-gradient(rgba(200, 200, 200, 0.1) 0.1em, transparent 0.1em), -moz-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+    background-image: linear-gradient(rgba(200, 200, 200, 0.1) 0.1em, transparent 0.1em), linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+    background-size: 100% 0.6em;
+    box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
+    border-radius: 0px 10px 10px 0px;
+}
+
+/*
+    3. opening cover, back cover and pages
+*/
+
+.paperback_front {
+    -webkit-transform: rotateY(-38deg) translateZ(0px);
+    -moz-transform: rotateY(-38deg) translateZ(0px);
+    transform: rotateY(-38deg) translateZ(0px);
+    z-index: 100;
+}
+
+.paperback_back {
+    -webkit-transform: rotateY(-25deg);
+    -moz-transform: rotateY(-25deg);
+    transform: rotateY(-25deg);
+}
+
+.ruled_paper li:nth-child(1) {
+    -webkit-transform: rotateY(-27deg);
+    -moz-transform: rotateY(-27deg);
+    transform: rotateY(-27deg);
+}
+
+.ruled_paper li:nth-child(2) {
+    -webkit-transform: rotateY(-29deg);
+    -moz-transform: rotateY(-29deg);
+    transform: rotateY(-29deg);
+}
+
+.ruled_paper li:nth-child(3) {
+    -webkit-transform: rotateY(-31deg);
+    -moz-transform: rotateY(-31deg);
+    transform: rotateY(-31deg);
+}
+
+.ruled_paper li:nth-child(4) {
+    -webkit-transform: rotateY(-33deg);
+    -moz-transform: rotateY(-33deg);
+    transform: rotateY(-33deg);
+}
+
+.ruled_paper li:nth-child(5) {
+    -webkit-transform: rotateY(-35deg);
+    -moz-transform: rotateY(-35deg);
+    transform: rotateY(-35deg);
+}
+
+/*
+    4. position, transform y transition
+*/
+
+.paperback_front,
+.paperback_back,
+.paperback_front li,
+.paperback_back li {
+    border-radius: 2px 8px 8px 2px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.paperback_front,
+.paperback_back {
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+}
+
+.paperback_front{
+    -webkit-transition: all 0.5s ease, z-index 0.6s;
+    -moz-transition: all 0.5s ease, z-index 0.6s;
+    transition: all 0.5s ease, z-index 0.6s;
+}
+
+.paperback_front li img,
+.paperback_back li img {
+    border-radius: 2px 8px 8px 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Ruled paper */
+
+.ruled_paper,
+.ruled_paper > li {
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.ruled_paper {
+    width: 98%;
+    height: 98%;
+    top: 1%;
+    left: 1%;
+    z-index: 10;
+}
+
+.ruled_paper > li {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ruled_paper > li {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transition-property: transform;
+    -moz-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+.ruled_paper li:nth-child(1) {
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+}
+
+.ruled_paper li:nth-child(2) {
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+}
+
+.ruled_paper li:nth-child(3) {
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.ruled_paper li:nth-child(4) {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+.ruled_paper li:nth-child(5) {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+/* Cover colors */
+.green {
+    background: #2ecc71;
+}
+
+.red {
+    background: #cb0000;
+}
+
+/* figcaption */
+
+figcaption {
+    text-align: left;
+    position: absolute;
+    top: 0%;
+    left: 170px;
+    width: 550px;
+    -webkit-backface-visibility: hidden;
+}
+
+figcaption h1 {
+    margin: 0;
+}
+
+figcaption span {
+    color: #48bb87;
+    padding: 0.6em 0 1em 0;
+    display: block;
+}
+
+figcaption p {
+    margin-top: 0px;
+    color: #63707d;
+    line-height: 1.4;
+    font-size: 1.5em;
+}
