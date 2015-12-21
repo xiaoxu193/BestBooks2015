@@ -105,7 +105,6 @@ Table of Contents
 .book {
     position: relative;
     width: 160px; 
-    height: 220px;
     margin-left: 20px;
     -webkit-perspective: 1500px;
     -moz-perspective: 1500px;
@@ -224,6 +223,7 @@ Table of Contents
     -webkit-transform-origin: 0% 100%;
     -moz-transform-origin: 0% 100%;
     transform-origin: 0% 100%;
+    height: 220px;
 }
 
 .paperback_front{
@@ -252,7 +252,7 @@ Table of Contents
 
 .ruled_paper {
     width: 98%;
-    height: 98%;
+    height: 220px;
     top: 1%;
     left: 1%;
     z-index: 10;
@@ -320,7 +320,7 @@ Table of Contents
 
 figcaption {
     text-align: left;
-    position: absolute;
+    position: relative;
     top: 0%;
     left: 170px;
     width: 550px;
